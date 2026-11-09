@@ -88,11 +88,67 @@ Build a **Jupyter-based research notebook** using a documented historical or del
 
 **Proposed evaluation measures:** correctness of pricing and payoff calculations, data freshness, contract mapping accuracy, completeness of risk disclosure, and whether decisions are reproducible. No trading performance is claimed.
 
-## Relationship to other projects
+## The problem behind the product
 
-- **API Intelligence:** helps identify and evaluate legitimate sources of market and contract data.
-- **Underwriting Engine:** can investigate the underlying asset and whether an investment thesis or contract exposure is economically justified.
-- **Project Matrix:** provides a broader framework for company and industry analysis, useful when the underlying is a company rather than an index.
+A broker screen can show prices and positions; a textbook can explain an option's payoff. Neither necessarily answers a **portfolio-specific decision question** with consistent assumptions: *What risk am I taking, how does this contract change my current portfolio, and what conditions would make the trade idea invalid?*
+
+The product thesis is not “AI picks the best option every morning.” It is **a disciplined personal research and risk-review workflow that compares possible actions, including no trade**. Its first goal is better understanding and fewer avoidable errors; any improvement in realized returns would require a much longer, controlled evaluation and cannot be assumed.
+
+### Decisions, user needs, and alternatives
+
+| Current approach | Useful for | Gap to investigate |
+| --- | --- | --- |
+| Exchange / broker option chains | Current contracts and prices | Harder to connect multiple views with a consistent risk thesis |
+| Brokerage portfolio screens | Holdings, orders and P&L | Scenario impacts across positions and model assumptions may be limited |
+| Spreadsheets and notebooks | Transparent calculations | Manual updating, contract mapping and reconciliation |
+| Educational resources | Concept learning | Not tied to one's actual positions, time horizon or constraints |
+
+**Primary user:** me, learning and researching Indian derivatives. No commercial ICP or validated user research is claimed.
+
+## A decision memo, not a trading signal
+
+A high-quality response to “What should I consider today?” would include:
+
+1. **As-of time and data state:** exchange session, last available quote, contract specifications, liquidity and feed limitations.
+2. **Portfolio baseline:** open positions, available capital, existing risk and max tolerated loss supplied by the user.
+3. **Thesis and evidence:** what observation motivates the idea and what alternative explanations exist.
+4. **Eligible strategies:** only contracts that meet predetermined liquidity, defined-risk and data-quality constraints.
+5. **Comparable scenarios:** underlying moves, volatility moves, decay, costs and stress events.
+6. **Rejection rules:** missing quotes, unstable inputs, concentration, inadequate liquidity, risk-budget breach or no persuasive advantage over no trade.
+7. **Human decision and journal:** the analysis and uncertainty, with no automated orders.
+
+**An example should never imply that a chosen strategy is objectively optimal.** Candidate ranking is conditional on a defined objective, scenario assumptions and available evidence. Open interest is positioning information, not a reliable standalone forecast or a precise support/resistance line.
+
+## Quantitative controls and evaluation metrics
+
+| Measure | Definition | Purpose |
+| --- | --- | --- |
+| Contract integrity | Correct underlying, expiry, option type, strike, multiplier and settlement rules | Prevent invalid instrument comparisons |
+| Data freshness | Age of every quote and source, with explicit stale-data rejection thresholds | Avoid presenting old prices as executable |
+| Calculation accuracy | Differences against independent reference payoffs, Greeks and portfolio arithmetic | Establish mathematical reliability |
+| Risk-limit compliance | Share of proposed candidates meeting user-entered loss, exposure, liquidity and margin limits | Guardrail; unsuitable candidates must be rejected |
+| Scenario coverage | Number of material stress dimensions tested (price, IV, time, liquidity/costs) | Reduce fragile one-dimensional views |
+| Explainability | Share of conclusions backed by a computation, a sourced observation, or a declared assumption | Detect fabricated or unsupported narratives |
+| Research efficiency | Time to reproduce a complete, auditable idea review versus a manual process | Test whether the workbench is useful |
+| Decision discipline | Share of examined ideas with documented no-trade analysis and subsequent review | Learn from decisions without cherry-picking wins |
+
+No winning percentage, Sharpe ratio, drawdown reduction or returns improvement is reported: **no real strategy has been validated**. A successful prototype can be a correct *no-trade* conclusion.
+
+### Evaluation gates
+
+- **Gate 1 — Mathematics:** reproduce textbook/independent contract payoffs and Greeks under specified conventions; cover edge cases.
+- **Gate 2 — Data:** validate mapping, timestamping, missing quotes, bad spreads, lot size and market-hours handling.
+- **Gate 3 — Portfolio:** prove incremental versus standalone exposures and mark-to-market scenario results.
+- **Gate 4 — Decision quality:** have a human review at least a small set of recorded cases, including deliberate “no trade” outcomes.
+- **Gate 5 — Operational readiness:** only then consider permitted market-data integration; brokerage execution remains outside the current scope.
+
+## Capital-markets boundary and neighboring work
+
+This is a **capital-markets / derivatives research project**, not a stage of Project Matrix's turnaround or business-improvement workflow.
+
+- **Underwriting Engine** is the closest conceptual neighbor: it examines whether an underlying-asset thesis is supported and what could invalidate it. F&O Analyst evaluates **the actual derivatives contract, strategy, and portfolio consequences**. Neither is an implemented prerequisite for the other.
+- **API Intelligence** might help vet market-data providers and tools. This is a possible shared practice, not a required integrated platform.
+- **Project Matrix** focuses on a company's financial and operational diagnosis, turnaround, and value creation. A company memo could sometimes provide background for investment research, but **no current integration is planned**.
 
 ## Boundaries
 
