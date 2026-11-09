@@ -1,0 +1,20 @@
+# Python / notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+# Local tooling
+.DS_Store
+.vscode/
+.idea/
+# Build outputs
+node_modules/
+dist/
+build/
+# Private data / secrets
+secrets/
+credentials.json
