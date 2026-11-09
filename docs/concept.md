@@ -1,5 +1,7 @@
 # F&O Analyst — Original Concept & Scope
 
+> **Current direction:** This file preserves the original exploration. The [README](../README.md) now defines a **personal, portfolio-aware capital-markets research assistant** that explains contracts, compares risk-defined trade ideas and can conclude **no trade**. It is independent of Project Matrix and is not a production trading signal or execution system.
+
 ## Original idea (from Notion)
 
 > Imagine opening an application and asking: “What's happening in NIFTY options today? Is volatility increasing? Where is open interest concentrated?”
