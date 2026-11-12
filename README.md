@@ -80,12 +80,6 @@ Every conclusion should show **data timestamp, source, calculations, assumptions
 
 A useful response would show the **incremental portfolio exposure**, scenario P&L, capital required, and relevant assumptions. It could also conclude that the candidate is unsuitable or that no trade is preferable.
 
-## First practical milestone
-
-Build a **Jupyter-based research notebook** using a documented historical or delayed snapshot. Parse a small option chain, verify contract specifications, calculate a few Greeks and payoff scenarios, and compare two strategies against a simple portfolio and no-trade baseline. Test the math independently before adding conversational AI.
-
-**Proposed evaluation measures:** correctness of pricing and payoff calculations, data freshness, contract mapping accuracy, completeness of risk disclosure, and whether decisions are reproducible. No trading performance is claimed.
-
 ## The problem behind the product
 
 A broker screen can show prices and positions; a textbook can explain an option's payoff. Neither necessarily answers a **portfolio-specific decision question** with consistent assumptions: *What risk am I taking, how does this contract change my current portfolio, and what conditions would make the trade idea invalid?*
