@@ -1,7 +1,5 @@
 # F&O Analyst — Proposed Architecture
 
-**Status:** Concept-stage research architecture. No live exchange, brokerage or trading integration has been built.
-
 **Product boundary:** A read-only personal derivatives research and scenario-analysis system. No automated trade submission, investment guarantees or unsupported “best option” claims.
 
 ```text
