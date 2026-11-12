@@ -4,8 +4,6 @@
 
 F&O Analyst is a proposed **personal futures-and-options research assistant**. I want to understand derivatives more deeply and build a disciplined way to examine market conditions, contracts, strategies, and my overall portfolio **before deciding whether any trade is worth considering**.
 
-**Status:** Concept / research. No live market-data integration, broker connection, trading model, or production agent is claimed.
-
 ## Why F&O Analyst?
 
 A futures or options decision is not just a question of whether an index or stock might rise or fall. The outcome depends on the **underlying asset, contract terms, strike, expiry, implied volatility, time decay, liquidity, transaction costs, and portfolio exposure**.
